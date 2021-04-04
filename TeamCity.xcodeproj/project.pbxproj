@@ -13,6 +13,7 @@
 		2A5040E8261A1E07006D8988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5040E6261A1E07006D8988 /* Main.storyboard */; };
 		2A5040EA261A1E0B006D8988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5040E9261A1E0B006D8988 /* Assets.xcassets */; };
 		2A5040ED261A1E0B006D8988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5040EB261A1E0B006D8988 /* LaunchScreen.storyboard */; };
+		6D96878FCB72039E2BF77122 /* Pods_TeamCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62742FD42FED5AAA37974D58 /* Pods_TeamCity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		2A5040E9261A1E0B006D8988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A5040EC261A1E0B006D8988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A5040EE261A1E0B006D8988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62742FD42FED5AAA37974D58 /* Pods_TeamCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85D23D7EF6C45A6ED237A3A9 /* Pods-TeamCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamCity.debug.xcconfig"; path = "Target Support Files/Pods-TeamCity/Pods-TeamCity.debug.xcconfig"; sourceTree = "<group>"; };
+		867276001A0D99CF852F7AD7 /* Pods-TeamCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamCity.release.xcconfig"; path = "Target Support Files/Pods-TeamCity/Pods-TeamCity.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D96878FCB72039E2BF77122 /* Pods_TeamCity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				2A5040DF261A1E06006D8988 /* TeamCity */,
 				2A5040DE261A1E06006D8988 /* Products */,
+				7C0DE35B950A176EFEEEE66D /* Pods */,
+				2C82B3D615C1B44E2CC3070B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = TeamCity;
 			sourceTree = "<group>";
 		};
+		2C82B3D615C1B44E2CC3070B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62742FD42FED5AAA37974D58 /* Pods_TeamCity.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C0DE35B950A176EFEEEE66D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85D23D7EF6C45A6ED237A3A9 /* Pods-TeamCity.debug.xcconfig */,
+				867276001A0D99CF852F7AD7 /* Pods-TeamCity.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A5040F1261A1E0B006D8988 /* Build configuration list for PBXNativeTarget "TeamCity" */;
 			buildPhases = (
+				C9F8A37F90AAED7A57B40C5E /* [CP] Check Pods Manifest.lock */,
 				2A5040D9261A1E06006D8988 /* Sources */,
 				2A5040DA261A1E06006D8988 /* Frameworks */,
 				2A5040DB261A1E06006D8988 /* Resources */,
+				FFF373BF8F43995F7AFF74C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C9F8A37F90AAED7A57B40C5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TeamCity-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFF373BF8F43995F7AFF74C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeamCity/Pods-TeamCity-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeamCity/Pods-TeamCity-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeamCity/Pods-TeamCity-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A5040D9261A1E06006D8988 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		2A5040F2261A1E0B006D8988 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85D23D7EF6C45A6ED237A3A9 /* Pods-TeamCity.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		2A5040F3261A1E0B006D8988 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 867276001A0D99CF852F7AD7 /* Pods-TeamCity.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
